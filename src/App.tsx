@@ -4,7 +4,7 @@ import { TextInput } from './components/TextInput';
 
 function App() {
   // const [name, setName] = useState('');
-  const [error, setError] = useState(false);
+  // const [error, setError] = useState(false);
   
 
   // const nameHandler =(e: ChangeEvent<HTMLInputElement>) => {
