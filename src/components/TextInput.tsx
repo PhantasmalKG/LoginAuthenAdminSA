@@ -1,40 +1,34 @@
-import { ChangeEvent, FC } from 'react'
+import { FC } from 'react'
 
 interface TextInputProps{
-    inputType: 'text' | 'number' | 'email' | 'password'; //Different types of input
     label: string; //Label of the input component
-    value: string | number; //The value of the input component
+    type: string;
+    value: string; //The value of the input component
     placeholder: string; //Predefined message
-    entryName: string; //Form data entry name
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-    isDisabled: boolean; //Input is disabled or not.
-    isError: boolean; //Error Handling
+    onChange: (value: string) => void;
+    
 
 }
 
 export const TextInput: FC<TextInputProps> = ({
-  inputType,
   label,
+  type,
   value,
-  entryName,
   placeholder,
   onChange,
-  isDisabled,
-  isError
   }) => {
   return (
     <div className="wrapper">
-        <label htmlFor={label}>{label}</label>
+        <label htmlFor={label} className='block text-sm font-medium text-gray-700 mb-2'>{label}</label>
         <input 
-        type={inputType}
+        type={type}
         id ={label}
         value={value}
-        name={entryName}
         placeholder={placeholder}
-        onChange={onChange}
-        disabled={isDisabled}
+        onChange={(e) => onChange(e.target.value)}
+        
         />
-        {isError && <p className="isError">Error: Entry field for ${label} is not filled!</p>}
+        {/* {isError && <p className="isError">Error: Entry field for ${label} is not filled!</p>} */}
     </div>
   )
 }

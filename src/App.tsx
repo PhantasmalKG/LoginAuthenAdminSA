@@ -1,8 +1,11 @@
 import './App.css'
-import { useState } from 'react';
+import Login from './Login'
+
+// import {ChangeEvent, useState } from 'react';
 import { TextInput } from './components/TextInput';
 
 function App() {
+  
   // const [name, setName] = useState('');
   // const [error, setError] = useState(false);
   
@@ -18,21 +21,23 @@ function App() {
   //   } else {
   //     setError(false);
   //   }
-  //}
+  // }
   return (
-    <>
+    <div className='absolute top-0 right-0 w-screen h-screen bg-black'>
+    <Login />
+    
       
       <TextInput 
       inputType="text" 
       label="Name" 
-      value=""
-      entryName="name"
+      value={name}
+      name="name"
       isError={error}
-      // onChange={nameHandler()}
+      onChange={nameHandler()}
       placeholder="Please enter your Name."
       isDisabled={false}
       />
-    </>
+    </div>
   )
 }
 
