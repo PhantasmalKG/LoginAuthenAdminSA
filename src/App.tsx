@@ -2,7 +2,7 @@ import './App.css'
 import Login from './Login'
 
 // import {ChangeEvent, useState } from 'react';
-import { TextInput } from './components/TextInput';
+// import { TextInput } from './components/TextInput';
 
 function App() {
   
@@ -26,7 +26,7 @@ function App() {
     <div className='absolute top-0 right-0 w-screen h-screen bg-black'>
     <Login />
     
-      
+{/*       
       <TextInput 
       inputType="text" 
       label="Name" 
@@ -36,7 +36,7 @@ function App() {
       onChange={nameHandler()}
       placeholder="Please enter your Name."
       isDisabled={false}
-      />
+      /> */}
     </div>
   )
 }

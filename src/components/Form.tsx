@@ -1,19 +1,13 @@
-import { useState } from "react";
-import { TextInput } from "./TextInput";
-
-interface FormProps {
-    name: string;
-    email: string;
-    password: string;
+export type FormProps = {
+   onSubmit: () => void,
+   children?: React.ReactNode,
 }
 
-const Form:React.FC = () => {
-    const [parameters, setParameters] = useState<FormProps>({name:'', email:'', password:''});
-
-    return(
-        <form onSubmit={}></form>
-    );
-
-};
+const Form:React.FC<FormProps> = ({onSubmit, children}) => 
+(
+    <form onSubmit={(e) => { e.preventDefault(); onSubmit(); }}>
+         {children}
+    </form>
+);
 
 export default Form; 
